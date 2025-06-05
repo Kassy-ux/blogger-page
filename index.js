@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
+   
     const hamburger = document.querySelector('.hamburger');
     const navbarCollapse = document.querySelector('.navbar-collapse');
     const hamburgerIcon = document.querySelector('.hamburger-icon');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Dropdown toggle for mobile
+   
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
     
     dropdownToggles.forEach(toggle => {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     
-    // Close dropdown when clicking outside
+  
     document.addEventListener('click', function(e) {
       if (!e.target.closest('.nav-item') && window.innerWidth <= 992) {
         dropdownToggles.forEach(toggle => {
