@@ -1,16 +1,4 @@
-/* Base Styles */
-:root {
-    --light-red: hsl(356, 100%, 66%);
-    --very-light-red: hsl(355, 100%, 74%);
-    --very-dark-blue: hsl(208, 49%, 24%);
-    
-    --white: hsl(0, 100%, 100%);
-    --grayish-blue: hsl(207, 13%, 34%);
-    --very-dark-grayish-blue: hsl(240, 10%, 16%);
-    
-    --gradient-intro: linear-gradient(135deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
-    --gradient-body: linear-gradient(135deg, hsl(237, 17%, 21%), hsl(237, 23%, 31%));
-  }
+
   
   * {
     margin: 0;
@@ -22,12 +10,12 @@
     font-family: 'Overpass', sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    color: var(--grayish-blue);
+    color: hsl(207, 13%, 34%);
     overflow-x: hidden;
   }
   
   h1, h2, h3, h4 {
-    color: var(--very-dark-blue);
+    color: hsl(208, 49%, 24%);
     font-weight: 600;
     line-height: 1.2;
   }
@@ -53,27 +41,27 @@
   }
   
   .btn-primary {
-    background-color: var(--white);
-    color: var(--very-light-red);
+    background-color: hsl(0, 100%, 100%);
+    color: hsl(355, 100%, 74%);
   }
   
   .btn-primary:hover {
-    background-color: var(--very-light-red);
-    color: var(--white);
+    background-color: hsl(355, 100%, 74%);
+    color: hsl(0, 100%, 100%);
   }
   
   .btn-outline {
-    border: 1px solid var(--white);
-    color: var(--white);
+    border: 1px solid hsl(0, 100%, 100%);
+    color: hsl(0, 100%, 100%);
   }
   
   .btn-outline:hover {
-    background-color: var(--white);
-    color: var(--very-light-red);
+    background-color: hsl(0, 100%, 100%);
+    color: hsl(355, 100%, 74%);
   }
   
   .btn-login {
-    color: var(--white);
+    color: hsl(0, 100%, 100%);
     margin-right: 10px;
   }
   
@@ -81,10 +69,10 @@
     text-decoration: underline;
   }
   
-  /* Header Styles */
+ 
   .header {
-    background: var(--gradient-intro);
-    color: var(--white);
+    background:linear-gradient(135deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    color: hsl(0, 100%, 100%);
     border-bottom-left-radius: 100px;
     padding: 50px 0 100px;
     position: relative;
@@ -135,7 +123,7 @@
   .dropdown-toggle {
     background: none;
     border: none;
-    color: var(--white);
+    color: hsl(0, 100%, 100%);
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     cursor: pointer;
@@ -152,7 +140,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background: var(--white);
+    background: hsl(0, 100%, 100%);
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -165,7 +153,7 @@
   
   .dropdown-menu a {
     display: block;
-    color: var(--very-dark-grayish-blue);
+    color: hsl(240, 10%, 16%);
     padding: 8px 0;
     font-family: 'Ubuntu', sans-serif;
   }
@@ -206,7 +194,7 @@
     gap: 20px;
   }
   
-  /* Section Styles */
+
   section {
     padding: 100px 0;
   }
@@ -244,8 +232,8 @@
   }
   
   .section-infrastructure {
-    background: var(--gradient-body);
-    color: var(--white);
+    background: linear-gradient(135deg,hsl(237, 17%, 21%), hsl(237, 23%, 31%));
+    color: hsl(0, 100%, 100%);
     padding: 150px 0;
     margin: 100px 0;
     border-top-right-radius: 100px;
@@ -271,7 +259,7 @@
   }
   
   .infrastructure-text h2 {
-    color: var(--white);
+    color: hsl(0, 100%, 100%);
     font-size: 36px;
     margin-bottom: 20px;
   }
@@ -308,10 +296,10 @@
     margin-bottom: 20px;
   }
   
-  /* Footer Styles */
+  
   .footer {
-    background: var(--very-dark-grayish-blue);
-    color: var(--white);
+    background: hsl(240, 10%, 16%);
+    color: hsl(0, 100%, 100%);
     padding: 70px 0;
     border-top-right-radius: 100px;
   }
@@ -329,7 +317,7 @@
   }
   
   .footer-group h4 {
-    color: var(--white);
+    color: hsl(0, 100%, 100%);
     margin-bottom: 30px;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
@@ -353,7 +341,7 @@
     text-decoration: underline;
   }
   
-  /* Mobile Styles */
+  
   @media (max-width: 992px) {
     .hamburger {
       display: block;
@@ -364,7 +352,7 @@
       top: 100px;
       left: 20px;
       right: 20px;
-      background: var(--white);
+      background: hsl(0, 100%, 100%);
       border-radius: 5px;
       padding: 30px;
       flex-direction: column;
@@ -395,7 +383,7 @@
     }
     
     .dropdown-toggle {
-      color: var(--very-dark-blue);
+      color: hsl(208, 49%, 24%);
       font-weight: 600;
     }
     
@@ -425,14 +413,14 @@
     }
     
     .btn-login {
-      color: var(--very-dark-blue);
+      color: hsl(208, 49%, 24%);
       margin-right: 0;
       margin-bottom: 15px;
     }
     
     .btn-primary {
       background: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
-      color: var(--white);
+      color:hsl(0, 100%, 100%);
       width: 100%;
     }
     
