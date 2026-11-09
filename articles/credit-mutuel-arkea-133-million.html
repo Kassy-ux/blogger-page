@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+<title>$133 Million Stolen from Crédit Mutuel Arkéa via Exploited Service Provider — Stancy Ngereso</title>
+<meta name="description" content="The Arkéa heist is a perimeter story: a third-party platform became the doorway, and the bank's own account became the getaway car." />
+<style>
+  :root{
+    --red-500:hsl(356,100%,66%); --red-550:hsl(353,100%,62%);
+    --blue-900:hsl(208,49%,24%); --purple-950:hsl(237,17%,21%);
+    --purple-900:hsl(237,23%,31%); --gray-600:hsl(207,13%,34%);
+    --gray-900:hsl(240,10%,16%); --paper:#ffffff; --ink:#1b1e2b;
+    --soft:#f4f5f9; --line:#e3e6ef; --amber:#fff4d6; --amber-line:#e9c46a;
+    --gold:#e7b24b; --navy:#101a33; --navy-2:#1b2a4a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Ubuntu,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--paper);line-height:1.7}
+  a{color:var(--red-550);text-underline-offset:3px}
+  .site-header{background:linear-gradient(135deg,var(--purple-950),var(--purple-900));color:#fff;padding:18px 0}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  .nav{display:flex;align-items:center;justify-content:space-between;font-family:Overpass,sans-serif}
+  .brand{font-weight:700;letter-spacing:.3px;color:#fff;text-decoration:none}
+  .nav a.navlink{color:#e8e9f3;text-decoration:none;font-size:.92rem;margin-left:18px;opacity:.9}
+  .nav a.navlink:hover{opacity:1;text-decoration:underline}
+  .hero{background:
+      radial-gradient(900px 360px at 88% -20%, rgba(231,178,75,.30), transparent 60%),
+      linear-gradient(135deg,var(--navy),var(--navy-2) 70%,#2a1a2e);
+    color:#fff;padding:64px 0 52px}
+  .kicker{font-family:Overpass,sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:600;color:var(--gold)}
+  h1{font-family:Overpass,sans-serif;font-weight:600;line-height:1.12;font-size:clamp(1.9rem,4.6vw,3.0rem);margin:.35em 0 .3em}
+  .dek{font-size:1.12rem;max-width:650px;opacity:.96;margin:0 0 1.1em}
+  .byline{font-size:.9rem;opacity:.9}
+  .tags{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
+  .tag{font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;border:1px solid rgba(231,178,75,.55);color:#f2e6c8;border-radius:999px;padding:4px 10px}
+  article{padding:46px 0 20px}
+  article p{margin:0 0 1.15em;font-size:1.06rem}
+  article h2{font-family:Overpass,sans-serif;font-size:1.55rem;line-height:1.2;margin:2.1em 0 .55em;color:var(--blue-900)}
+  article h3{font-family:Overpass,sans-serif;font-size:1.18rem;margin:1.6em 0 .4em;color:var(--gray-900)}
+  .lede{font-size:1.16rem}
+  .dropcap::first-letter{float:left;font-family:Overpass,sans-serif;font-size:3.2rem;line-height:.82;padding:6px 10px 0 0;font-weight:700;color:var(--gold)}
+  .thesis{background:linear-gradient(135deg,#101a33,#1b2a4a);color:#f3f5fb;border-radius:12px;padding:22px 24px;margin:1.7em 0}
+  .thesis h3{margin:0 0 8px;color:var(--gold);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+  .thesis p{margin:0;font-size:1.12rem;line-height:1.6}
+  .callout{background:var(--soft);border-left:4px solid var(--gold);border-radius:8px;padding:18px 20px;margin:1.6em 0}
+  .callout h3{margin-top:0}
+  .callout ul{margin:.3em 0 0;padding-left:1.1em}
+  .callout li{margin:.45em 0}
+  .conf{font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:5px;padding:2px 7px;margin-right:6px;vertical-align:1px}
+  .conf.high{background:#e3f6e8;color:#1f7a3f}
+  .conf.mod{background:var(--amber);color:#7a5a00}
+  .conf.rep{background:#fde8e8;color:#a12626}
+  figure{margin:1.9em 0;padding:0}
+  figure svg{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:#fff}
+  figcaption{font-size:.86rem;color:var(--gray-600);margin-top:9px;line-height:1.5}
+  figcaption b{color:var(--ink)}
+  blockquote{margin:1.6em 0;padding:2px 0 2px 18px;border-left:3px solid var(--gold);color:var(--gray-600);font-style:italic}
+  table{width:100%;border-collapse:collapse;margin:1.4em 0;font-size:.92rem}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:Overpass,sans-serif;color:var(--blue-900);background:var(--soft)}
+  .pill{font-size:.7rem;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:999px;white-space:nowrap}
+  .pill.c{background:#e3f6e8;color:#1f7a3f}.pill.r{background:var(--amber);color:#7a5a00}
+  .stat{display:flex;gap:14px;flex-wrap:wrap;margin:1.4em 0}
+  .stat div{flex:1 1 150px;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--soft)}
+  .stat b{display:block;font-family:Overpass,sans-serif;font-size:1.7rem;color:var(--blue-900);line-height:1.05}
+  .stat span{font-size:.82rem;color:var(--gray-600)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4em 0}
+  .card{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:#fff}
+  .card h4{font-family:Overpass,sans-serif;margin:0 0 .3em;font-size:1rem;color:var(--blue-900)}
+  .card p{font-size:.95rem;margin:0}
+  .sources{font-size:.9rem;color:var(--gray-600)}
+  .sources li{margin:.4em 0;word-break:break-word}
+  .footnote{font-size:.85rem;color:var(--gray-600);border-top:1px solid var(--line);margin-top:2em;padding-top:14px}
+  footer.site-footer{background:var(--purple-950);color:#d6d8e6;padding:26px 0;margin-top:40px;font-size:.86rem}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr} .hero{padding:46px 0 38px}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">Blogger</a>
+    <nav>
+      <a class="navlink" href="../index.html">Home</a>
+      <a class="navlink" href="./offensive-ai-packages-defenders-watch.html">Previous</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Research &middot; Financial Cybercrime</div>
+    <h1>$133 Million Stolen from Crédit Mutuel Arkéa via Exploited Service Provider</h1>
+    <p class="dek">This is not a crypto story, and it is not really a malware story. It is a perimeter story — one in which a third-party platform became the doorway and the bank&rsquo;s own account became the getaway car.</p>
+    <p class="byline">By Stancy Ngereso &middot; November 9, 2026 &middot; Based on Riftweld research briefing Item 3531</p>
+    <div class="tags">
+      <span class="tag">Third-party risk</span><span class="tag">Bank fraud</span><span class="tag">On-chain tracing</span><span class="tag">Confidence-rated</span>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+<article>
+
+  <div class="thesis">
+    <h3>The thesis</h3>
+    <p>The Arkéa heist is a trust-chain failure. When a bank hands a vendor platform privileged access to its payment rails, that vendor becomes the bank&rsquo;s real perimeter — and once an attacker is inside, the bank&rsquo;s own account is the cleanest exit on the network.</p>
+  </div>
+
+  <p class="lede dropcap">At 12:25 UTC on Sunday, November 1, a withdrawal left OKX. Forty-four minutes later, another left Kraken. By 23:10 that night, 84% of the money was already gone.</p>
+
+  <p>That is not how a bank robbery usually reads. There was no ransomware note, no dark-web auction, no exploited ATM. Instead, over roughly 28 hours, $126.04 million in USDC moved out of accounts at Kraken, Crypto.com, and OKX into seventeen wallets. A blockchain investigator noticed before the bank&rsquo;s customers did.</p>
+
+  <p>On November 4, Crédit Mutuel Arkéa — a French cooperative bank headquartered in Brest, with &euro;211.5 billion in assets and more than 5.8 million members and customers — confirmed it had suffered a cyberattack that enabled fraudulent transactions. The attackers, it said, reached the bank directly through the platform of one of its service providers, used the bank&rsquo;s own account to wire funds to other banks, and did not touch customer accounts.</p>
+
+  <p>Read that last part twice. The money did not leave through the vault. It left through the front door, with the bank&rsquo;s keys, in the bank&rsquo;s name.</p>
+
+  <h2>The arc: how the perimeter moved</h2>
+
+  <p>For two decades, &ldquo;the perimeter&rdquo; meant the firewall and the branch. Then it meant the identity provider and the API gateway. Now, for a bank of Arkéa&rsquo;s size, it increasingly means a vendor console that holds privileged access to payment operations — and that the bank does not fully control.</p>
+
+  <p>This is the systemic shift the incident illustrates. The compromise did not need to be exotic, because the trust relationship was not. A service provider with a platform &ldquo;through which&rdquo; the bank is reachable is, by definition, part of the bank&rsquo;s control plane. Attack that, and you inherit its permissions.</p>
+
+  <blockquote>The modern bank heist doesn&rsquo;t break the vault. It borrows the teller&rsquo;s login and writes itself a transfer.</blockquote>
+
+  <figure>
+    <svg viewBox="0 0 760 250" role="img" aria-labelledby="fig1">
+      <title id="fig1">The Arkéa trust chain: attacker to service provider to bank to exchanges</title>
+      <defs><marker id="a1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#9aa1b5"/></marker></defs>
+      <g font-family="Ubuntu,sans-serif" font-size="11" text-anchor="middle">
+        <rect x="12" y="92" width="96" height="58" rx="9" fill="#fde8e8" stroke="#f0b4b4"/>
+        <text x="60" y="115" fill="#1b1e2b" font-size="12">Attacker</text><text x="60" y="132" fill="#8a3b3b">external, organised</text>
+        <rect x="140" y="92" width="120" height="58" rx="9" fill="#eef0f8" stroke="#c9ceE0"/>
+        <text x="200" y="115" fill="#1b1e2b" font-size="12">Service provider</text><text x="200" y="132" fill="#5a6076">platform (unnamed)</text>
+        <rect x="292" y="92" width="110" height="58" rx="9" fill="#101a33" stroke="#101a33"/>
+        <text x="347" y="115" fill="#f2e6c8" font-size="12">Bank&rsquo;s own</text><text x="347" y="132" fill="#e7b24b">account</text>
+        <rect x="434" y="92" width="96" height="58" rx="9" fill="#eef0f8" stroke="#c9ceE0"/>
+        <text x="482" y="115" fill="#1b1e2b" font-size="12">Other banks</text><text x="482" y="132" fill="#5a6076">wire transfers</text>
+        <rect x="562" y="92" width="100" height="58" rx="9" fill="#fff4d6" stroke="#e9c46a"/>
+        <text x="612" y="115" fill="#1b1e2b" font-size="12">CEX accounts</text><text x="612" y="132" fill="#7a5a00">pre-positioned</text>
+        <rect x="684" y="92" width="64" height="58" rx="9" fill="#eef0f8" stroke="#c9ceE0"/>
+        <text x="716" y="115" fill="#1b1e2b" font-size="12">17 wallets</text><text x="716" y="132" fill="#5a6076">+ Monero</text>
+      </g>
+      <line x1="108" y1="121" x2="138" y2="121" stroke="#9aa1b5" stroke-width="2" marker-end="url(#a1)"/>
+      <line x1="260" y1="121" x2="290" y2="121" stroke="#9aa1b5" stroke-width="2" marker-end="url(#a1)"/>
+      <line x1="402" y1="121" x2="432" y2="121" stroke="#9aa1b5" stroke-width="2" marker-end="url(#a1)"/>
+      <line x1="530" y1="121" x2="560" y2="121" stroke="#9aa1b5" stroke-width="2" marker-end="url(#a1)"/>
+      <line x1="662" y1="121" x2="682" y2="121" stroke="#9aa1b5" stroke-width="2" marker-end="url(#a1)"/>
+      <text x="380" y="40" text-anchor="middle" font-family="Overpass,sans-serif" font-size="13" fill="#8a3b3b">The doorway, then the getaway car</text>
+      <text x="380" y="60" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="11" fill="#5a6076">fiat wires leave in the bank&rsquo;s name; crypto is only the second half of the escape</text>
+    </svg>
+    <figcaption><b>Figure 1.</b> The trust chain. The critical shift is the middle: a vendor platform with privileged reach into the bank, which converts a third-party relationship into the bank&rsquo;s control plane.</figcaption>
+  </figure>
+
+  <h2>The weekend, in order</h2>
+
+  <table>
+    <thead><tr><th>When</th><th>What happened</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Sun Nov 1, 12:25 UTC</td><td>First withdrawal leaves OKX; Kraken follows ~13:09</td><td><span class="pill c">On-chain</span></td></tr>
+      <tr><td>Sun Nov 1, by 23:10</td><td>84% of funds already moved; Tether freezes $1.14M USDT</td><td><span class="pill c">On-chain</span></td></tr>
+      <tr><td>Mon Nov 2</td><td>ZachXBT alerts on &gt;$106M from an unnamed EU entity</td><td><span class="pill r">Reported</span></td></tr>
+      <tr><td>Mon Nov 2, 15:46&ndash;16:30</td><td>Kraken pays $17.2M to two more wallets — after the alert</td><td><span class="pill c">On-chain</span></td></tr>
+      <tr><td>Tue Nov 3</td><td>Estimate raised to &gt;$133M after another $27M traced</td><td><span class="pill r">Reported</span></td></tr>
+      <tr><td>Wed Nov 4</td><td>ZachXBT names Arkéa; bank confirms attack; prosecutor opens case</td><td><span class="pill c">Confirmed</span></td></tr>
+      <tr><td>Thu Nov 5</td><td>Official estimate ~&euro;100M; operations largely resume</td><td><span class="pill c">Confirmed</span></td></tr>
+    </tbody>
+  </table>
+
+  <p>The numbers do not agree, and the gap is itself a finding. Arkéa&rsquo;s first estimate was about &euro;100 million ($112.6 million). It declined to confirm the $133 million / &euro;118 million figure, saying only that it could &ldquo;validate the order of magnitude.&rdquo; Bitquery&rsquo;s independent on-chain trace landed at $126.04 million. ZachXBT suspects more, including off-chain OTC settlement that never touches a public ledger.</p>
+
+  <div class="callout">
+    <h3>What is confirmed &mdash; and what is not</h3>
+    <ul>
+      <li><span class="conf high">Confirmed</span>Arkéa was attacked; fraudulent transactions occurred; customer accounts were not accessed; entry came via a service provider&rsquo;s platform (provider unnamed).</li>
+      <li><span class="conf high">Confirmed</span>The attackers used the bank&rsquo;s own account to wire funds to other banks, then moved value into crypto.</li>
+      <li><span class="conf rep">Disputed</span>Journalist Grégory Raymond alleges the entry point was Fortuneo, the bank&rsquo;s online subsidiary. Arkéa explicitly denies it. Neither claim is independently provable from public sources.</li>
+      <li><span class="conf rep">Unconfirmed</span>The provider&rsquo;s identity, the root cause, and whether the funds were treasury or customer money (beyond &ldquo;the bank&rsquo;s own account&rdquo;) remain undisclosed.</li>
+    </ul>
+  </div>
+
+  <h2>The getaway: fiat out, crypto in</h2>
+
+  <p>This is where the story becomes interesting for defenders. The bank side of the theft leaves no trace on Ethereum. Only the crypto side is visible — and it is visible in detail.</p>
+
+  <p>Bitquery traced $126.04 million in USDC leaving Kraken, Crypto.com, and OKX across November 1&ndash;2, destined for seventeen wallets. Twelve of those seventeen had previously been paid by the same exchanges; two of them had been receiving funds since May 2026. That is not improvisation. Those are pre-positioned mule accounts, aged like fine wine, waiting for the wire to land.</p>
+
+  <p>From there, the money split into parallel escapes. Just before midnight on November 1, a fresh wallet began selling stablecoins through UniswapX; within about four hours it had swapped $62.98 million for 27,553 ETH. Another branch converted USDC into DAI, a stablecoin with no issuer freeze function — it ended up roughly a third of the remaining holdings. About $95.8 million exited through bridges, exchange deposits, and instant-swap services. Part was converted to Monero, which obscures sender, recipient, and amount.</p>
+
+  <figure>
+    <svg viewBox="0 0 760 230" role="img" aria-labelledby="fig2">
+      <title id="fig2">On-chain money flow after the bank wires</title>
+      <defs><marker id="a2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#9aa1b5"/></marker></defs>
+      <rect x="10" y="86" width="120" height="58" rx="9" fill="#101a33"/>
+      <text x="70" y="110" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="12" fill="#f2e6c8">Bank wires</text>
+      <text x="70" y="127" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="10" fill="#e7b24b">fiat, off-chain</text>
+      <rect x="166" y="86" width="130" height="58" rx="9" fill="#eef0f8" stroke="#c9ceE0"/>
+      <text x="231" y="110" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="12" fill="#1b1e2b">Kraken / Crypto.com / OKX</text>
+      <text x="231" y="127" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="10" fill="#5a6076">pre-positioned accounts</text>
+      <rect x="332" y="86" width="110" height="58" rx="9" fill="#fff4d6" stroke="#e9c46a"/>
+      <text x="387" y="110" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="12" fill="#1b1e2b">17 wallets</text>
+      <text x="387" y="127" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="10" fill="#7a5a00">$126.04M USDC</text>
+      <g font-family="Ubuntu,sans-serif" font-size="10.5" text-anchor="middle">
+        <rect x="478" y="20" width="132" height="44" rx="8" fill="#fff" stroke="#c9ceE0"/><text x="544" y="38" fill="#1b1e2b">UniswapX &rarr; ETH</text><text x="544" y="53" fill="#5a6076">$62.98M / 27,553 ETH</text>
+        <rect x="478" y="80" width="132" height="44" rx="8" fill="#fff" stroke="#c9ceE0"/><text x="544" y="98" fill="#1b1e2b">Bridges / instant swaps</text><text x="544" y="113" fill="#5a6076">$95.8M</text>
+        <rect x="478" y="140" width="132" height="44" rx="8" fill="#fff" stroke="#c9ceE0"/><text x="544" y="158" fill="#1b1e2b">DAI &middot; Monero</text><text x="544" y="173" fill="#5a6076">&asymp;1/3 &middot; privacy coin</text>
+        <rect x="628" y="80" width="120" height="44" rx="8" fill="#e3f6e8" stroke="#a9d9b8"/><text x="688" y="98" fill="#1f7a3f">Frozen</text><text x="688" y="113" fill="#1f7a3f">$1.14M USDT</text>
+      </g>
+      <line x1="130" y1="115" x2="164" y2="115" stroke="#9aa1b5" stroke-width="2" marker-end="url(#a2)"/>
+      <line x1="296" y1="115" x2="330" y2="115" stroke="#9aa1b5" stroke-width="2" marker-end="url(#a2)"/>
+      <line x1="442" y1="100" x2="476" y2="45" stroke="#9aa1b5" stroke-width="1.6" marker-end="url(#a2)"/>
+      <line x1="442" y1="115" x2="476" y2="102" stroke="#9aa1b5" stroke-width="1.6" marker-end="url(#a2)"/>
+      <line x1="442" y1="130" x2="476" y2="160" stroke="#9aa1b5" stroke-width="1.6" marker-end="url(#a2)"/>
+      <line x1="610" y1="102" x2="626" y2="102" stroke="#9aa1b5" stroke-width="1.6" marker-end="url(#a2)"/>
+    </svg>
+    <figcaption><b>Figure 2.</b> The escape launder. Fiat leaves through the bank; crypto leaves through exchanges the attacker already controlled, then splits across swaps, bridges, stablecoin substitutes, and a privacy coin.</figcaption>
+  </figure>
+
+  <div class="stat">
+    <div><b>$126.04M</b><span>on-chain trace (Bitquery)</span></div>
+    <div><b>$62.98M</b><span>swapped to 27,553 ETH</span></div>
+    <div><b>$95.8M</b><span>through bridges / instant swaps</span></div>
+    <div><b>$1.14M</b><span>frozen (USDT only)</span></div>
+  </div>
+
+  <p>The freeze scoreboard is the sobering part. Tether froze $1.14 million of USDT. Circle froze none of the $1.71 million in USDC the thief still held. As of November 5, $37.26 million still sat on Ethereum in attacker-linked addresses, mostly as ETH — which no issuer can freeze. Recovery is not impossible; it is just slow, partial, and dependent on intermediaries who were never party to the bank&rsquo;s risk model.</p>
+
+  <h2>Why the system changed</h2>
+
+  <p>Four shifts make this incident a template rather than an outlier.</p>
+
+  <h3>1. Vendors are control planes now</h3>
+  <p>A platform that can reach the bank &ldquo;directly&rdquo; is not a supplier; it is part of the bank&rsquo;s identity and payment fabric. Third-party risk reviews that stop at contracts and questionnaires miss the operative question: what can this vendor do inside our rails, and who can impersonate it?</p>
+
+  <h3>2. The bank&rsquo;s own account is the quietest exit</h3>
+  <p>Customer accounts are watched. Treasury and operational accounts are often trusted by default. Sending transfers in the bank&rsquo;s own name, to other banks, in the exact name of the destination account holder, satisfies the checks designed for honest traffic.</p>
+
+  <h3>3. Mule accounts are aged, not spun up</h3>
+  <p>Twelve of seventeen receiving wallets had prior exchange payouts; two had been active since May. KYC at the destination does not help if the destination was cultivated months in advance.</p>
+
+  <h3>4. Disclosure timing is a security control</h3>
+  <p>ZachXBT&rsquo;s alert preceded the bank&rsquo;s disclosure by roughly two days. He argues that the delay let more than $30 million be laundered that EU law enforcement might otherwise have frozen. Whatever one thinks of pseudonymous investigators, the operational point stands: in crypto-laundering, hours are the difference between frozen and gone.</p>
+
+  <h2>The implication for defenders</h2>
+
+  <div class="grid2">
+    <div class="card"><h4>Map vendor privilege</h4><p>Treat service providers with payment or identity reach as Tier 0. Model what they can do inside your rails, not just what data they hold.</p></div>
+    <div class="card"><h4>Watch your own accounts</h4><p>Apply the same behavioral monitoring to treasury and operational accounts that you apply to customers — especially beneficiary-name changes and outbound velocity.</p></div>
+    <div class="card"><h4>Pre-position freeze relationships</h4><p>Know your exchange and issuer contacts before an incident. Tether froze; Circle did not. That difference is a policy and a phone call, not a law of nature.</p></div>
+    <div class="card"><h4>Treat disclosure as containment</h4><p>Decide in advance when and how you will publicize a theft. Silence is not neutral when the money is moving through third-party rails.</p></div>
+    <div class="card"><h4>Rehearse the crypto leg</h4><p>Your incident-response plan probably stops at the bank. Extend it through exchanges, bridges, and privacy coins — because the attacker&rsquo;s plan does.</p></div>
+    <div class="card"><h4>Distrust the perimeter story</h4><p>&ldquo;We weren&rsquo;t breached, our vendor was&rdquo; is not a defense. If the vendor can act as you, the vendor is you.</p></div>
+  </div>
+
+  <h2>What we still don&rsquo;t know</h2>
+  <ul>
+    <li>Which service provider was the entry point, and how its platform was compromised. No CVE or technical root cause has been disclosed.</li>
+    <li>Whether Fortuneo was involved. Raymond says yes; Arkéa says explicitly no. The contradiction is unresolved.</li>
+    <li>The definitive loss: &euro;100M, $126M, $133M, or more with OTC. The bank validated only &ldquo;the order of magnitude.&rdquo;</li>
+    <li>Whether the funds were treasury or customer money, beyond &ldquo;the bank&rsquo;s own account.&rdquo;</li>
+    <li>Why transfers continued for days without internal thresholds firing.</li>
+    <li>Attribution. ZachXBT rules out Lazarus with high confidence; Raymond&rsquo;s sources point toward franco-israeli fraud networks. No law-enforcement attribution is public.</li>
+  </ul>
+
+  <p class="footnote">The headline is the number. The lesson is the shape: a vendor relationship became the perimeter, the bank&rsquo;s own account became the exit, and the crypto rails turned a fraud into a race against the freeze button. Banks that treat third-party access and disclosure timing as core security controls will be harder to rob next time. The rest will keep discovering that the vault was never the point.</p>
+
+  <h2>Sources</h2>
+  <ul class="sources">
+    <li>Help Net Security, seed article (Nov 9, 2026) &mdash; helpnetsecurity.com/2026/11/09/credit-mutuel-arkea-cyberattack-133-million/</li>
+    <li>Crédit Mutuel Arkéa, press release and Q&amp;A &ldquo;Additional Information&rdquo; (Nov 4, 2026) &mdash; cm-arkea.com (primary)</li>
+    <li>Bitquery, on-chain tracing investigation (Nov 5, 2026) &mdash; bitquery.io/investigations/eu-106m-crypto-theft</li>
+    <li>ZachXBT, via The Defiant and Yahoo/Unchained (Nov 2&ndash;4, 2026)</li>
+    <li>Grégory Raymond, X thread (Nov 4, 2026) &mdash; x.com/gregory_raymond/status/2117908781443031236</li>
+    <li>AFP; Le Monde; Le Télégramme; The Record; BleepingComputer; Halborn; Kyneo; Cointelegraph via TradingView</li>
+  </ul>
+
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">© 2026 Stancy Ngereso · Research briefing Item 3531 · Published November 9, 2026</div>
+</footer>
+</body>
+</html>
