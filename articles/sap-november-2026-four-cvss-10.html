@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+<title>Four Perfect Tens in the SAP Kernel &mdash; Stancy Ngereso</title>
+<meta name="description" content="SAP shipped four CVSS 10.0 fixes in November 2026 and withheld the exploitation detail. The mechanism is not exotic, the configuration gate is quiet, and the public record stops short of a victim." />
+<style>
+  :root{
+    --red-500:hsl(356,100%,66%); --red-550:hsl(353,100%,62%);
+    --blue-900:hsl(208,49%,24%); --purple-950:hsl(237,17%,21%);
+    --purple-900:hsl(237,23%,31%); --gray-600:hsl(207,13%,34%);
+    --gray-900:hsl(240,10%,16%); --paper:#ffffff; --ink:#1b1e2b;
+    --soft:#f4f5f9; --line:#e3e6ef; --amber:#fff4d6; --amber-line:#e9c46a;
+    --gold:#e7b24b; --navy:#101a33; --navy-2:#1b2a4a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Ubuntu,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--paper);line-height:1.7}
+  a{color:var(--red-550);text-underline-offset:3px}
+  .site-header{background:linear-gradient(135deg,var(--purple-950),var(--purple-900));color:#fff;padding:18px 0}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  .nav{display:flex;align-items:center;justify-content:space-between;font-family:Overpass,sans-serif}
+  .brand{font-weight:700;letter-spacing:.3px;color:#fff;text-decoration:none}
+  .nav a.navlink{color:#e8e9f3;text-decoration:none;font-size:.92rem;margin-left:18px;opacity:.9}
+  .nav a.navlink:hover{opacity:1;text-decoration:underline}
+  .hero{background:
+      radial-gradient(900px 360px at 88% -20%, rgba(231,178,75,.30), transparent 60%),
+      linear-gradient(135deg,var(--navy),var(--navy-2) 70%,#2a1a2e);
+    color:#fff;padding:64px 0 52px}
+  .kicker{font-family:Overpass,sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:600;color:var(--gold)}
+  h1{font-family:Overpass,sans-serif;font-weight:600;line-height:1.12;font-size:clamp(1.9rem,4.6vw,3.0rem);margin:.35em 0 .3em}
+  .dek{font-size:1.12rem;max-width:650px;opacity:.96;margin:0 0 1.1em}
+  .byline{font-size:.9rem;opacity:.9}
+  .tags{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
+  .tag{font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;border:1px solid rgba(231,178,75,.55);color:#f2e6c8;border-radius:999px;padding:4px 10px}
+  article{padding:46px 0 20px}
+  article p{margin:0 0 1.15em;font-size:1.06rem}
+  article h2{font-family:Overpass,sans-serif;font-size:1.55rem;line-height:1.2;margin:2.1em 0 .55em;color:var(--blue-900)}
+  article h3{font-family:Overpass,sans-serif;font-size:1.18rem;margin:1.6em 0 .4em;color:var(--gray-900)}
+  .lede{font-size:1.16rem}
+  .dropcap::first-letter{float:left;font-family:Overpass,sans-serif;font-size:3.2rem;line-height:.82;padding:6px 10px 0 0;font-weight:700;color:var(--gold)}
+  .thesis{background:linear-gradient(135deg,#101a33,#1b2a4a);color:#f3f5fb;border-radius:12px;padding:22px 24px;margin:1.7em 0}
+  .thesis h3{margin:0 0 8px;color:var(--gold);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+  .thesis p{margin:0;font-size:1.12rem;line-height:1.6}
+  .callout{background:var(--soft);border-left:4px solid var(--gold);border-radius:8px;padding:18px 20px;margin:1.6em 0}
+  .callout h3{margin-top:0}
+  .callout ul{margin:.3em 0 0;padding-left:1.1em}
+  .callout li{margin:.45em 0}
+  .conf{font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:5px;padding:2px 7px;margin-right:6px;vertical-align:1px}
+  .conf.high{background:#e3f6e8;color:#1f7a3f}
+  .conf.mod{background:var(--amber);color:#7a5a00}
+  .conf.rep{background:#fde8e8;color:#a12626}
+  figure{margin:1.9em 0;padding:0}
+  figure svg{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:#fff}
+  figcaption{font-size:.86rem;color:var(--gray-600);margin-top:9px;line-height:1.5}
+  figcaption b{color:var(--ink)}
+  blockquote{margin:1.6em 0;padding:2px 0 2px 18px;border-left:3px solid var(--gold);color:var(--gray-600);font-style:italic}
+  table{width:100%;border-collapse:collapse;margin:1.4em 0;font-size:.92rem}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:Overpass,sans-serif;color:var(--blue-900);background:var(--soft)}
+  .pill{font-size:.7rem;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:999px;white-space:nowrap}
+  .pill.c{background:#e3f6e8;color:#1f7a3f}.pill.r{background:var(--amber);color:#7a5a00}
+  .stat{display:flex;gap:14px;flex-wrap:wrap;margin:1.4em 0}
+  .stat div{flex:1 1 150px;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--soft)}
+  .stat b{display:block;font-family:Overpass,sans-serif;font-size:1.7rem;color:var(--blue-900);line-height:1.05}
+  .stat span{font-size:.82rem;color:var(--gray-600)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4em 0}
+  .card{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:#fff}
+  .card h4{font-family:Overpass,sans-serif;margin:0 0 .3em;font-size:1rem;color:var(--blue-900)}
+  .card p{font-size:.95rem;margin:0}
+  .sources{font-size:.9rem;color:var(--gray-600)}
+  .sources li{margin:.4em 0;word-break:break-word}
+  .footnote{font-size:.85rem;color:var(--gray-600);border-top:1px solid var(--line);margin-top:2em;padding-top:14px}
+  footer.site-footer{background:var(--purple-950);color:#d6d8e6;padding:26px 0;margin-top:40px;font-size:.86rem}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr} .hero{padding:46px 0 38px}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">Blogger</a>
+    <nav>
+      <a class="navlink" href="../index.html">Home</a>
+      <a class="navlink" href="./credit-mutuel-arkea-133-million.html">Previous</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Research &middot; Enterprise Software</div>
+    <h1>Four Perfect Tens in the SAP Kernel</h1>
+    <p class="dek">SAP&rsquo;s November patch day shipped four CVSS 10.0 fixes and withheld the exploitation detail. The mechanism is not exotic, the configuration gate is quiet, and the public record stops short of a victim.</p>
+    <p class="byline">By Stancy Ngereso &middot; November 10, 2026 &middot; Riftweld research briefing &middot; SAP November 2026</p>
+    <div class="tags">
+      <span class="tag">SAP</span><span class="tag">CVSS 10.0</span><span class="tag">Pre-auth RCE</span><span class="tag">Gateway</span><span class="tag">SAML</span>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+<article>
+  <p class="lede dropcap">For years, the working assumption behind most SAP patching programmes has been that the kernel is the part you update on a schedule, and that the dangerous bugs live in custom code. The November 2026 security notes do not support that assumption. Four of them carry the maximum CVSS score of 10.0, and three describe ways to run operating-system commands on the SAP host without a credential. What the disclosure does not contain is the evidence that usually turns a score into an incident: a confirmed victim, or a scan.</p>
+  <p>The shape of the month is not subtle. RedRays, reviewing SAP for Me on 10 November, counted 38 notes with that release date: nine HotNews, thirteen High, fifteen Medium and one Low. Four of those notes score 10.0. As RedRays put it, &ldquo;SAP released 38 security notes on Patch Day, nine of them HotNews, and four of those score the maximum CVSS 10.0.&rdquo; The same review is blunt about why they matter: &ldquo;None of the four needs credentials: a SAML2 signature bypass in AS ABAP, a weakness in SAP Gateway&rsquo;s default access control list, and a WebSocket heap overflow that hits both SAP Web Dispatcher and the ABAP ICM.&rdquo;</p>
+  <p>Yet the public record is thinner than the scores. Onapsis Research Labs, which found and reported the kernel and gateway flaws, deliberately withheld exploitation detail from its advisories, saying the posts are aimed at exposure assessment and remediation rather than reproduction. The Hacker News notes that the notes themselves sit behind a sign-in: &ldquo;The notes are in SAP for Me, which requires a sign-in, and the vendor strongly recommends applying them as a priority.&rdquo; What is public is the CVE identifiers, the affected components and the configuration gates. What is not public is a working exploit, a victim, or a scan.</p>
+  <p>On 10 November, Onapsis published two advisories that, together, explain most of the month&rsquo;s risk. The first, ICM2SHELL, covers CVE-2026-76964 and CVE-2026-89126; the second, PROXYGATE, covers CVE-2026-89103. The most tangible detail is architectural: the SAP Web Dispatcher is built on the same kernel code as the Internet Communication Manager, so it does not merely forward the traffic that reaches the edge. It reassembles WebSocket messages itself, using the vulnerable code. &ldquo;Because that code is shared by the ICM and the SAP Web Dispatcher,&rdquo; Onapsis writes, &ldquo;both are affected, including the component that usually faces the Internet.&rdquo;</p>
+  <p>The consequence is command execution as <code>&lt;sid&gt;adm</code>, the operating-system account that owns the SAP installation, its instance profiles, its secure store and its database connectivity. That is not an application-level foothold. It is the identity under which the instance runs, and it is the identity an attacker needs to read or alter business data directly in the database, to harvest RFC destinations and technical credentials, to change configuration or binaries for persistence, and to stop the system outright.</p>
+  <p>The flaw is not theoretical, but it is also not yet observed. &ldquo;As of the date of this publication, the Onapsis Research Labs have not observed active in-the-wild exploitation of this vulnerability,&rdquo; the ICM2SHELL advisory states. The same posture applies to PROXYGATE. Onapsis says it supplied SAP with a working exploit that achieved full unauthenticated remote code execution end to end, running arbitrary commands as <code>&lt;sid&gt;adm</code>, and it reproduced the denial-of-service condition on every kernel release it tested. The absence of a victim, in other words, is a statement about the clock, not about the bug.</p>
+  <p>The operational weight is easiest to see on a production ERP system. &ldquo;On a production ERP system,&rdquo; Onapsis writes, &ldquo;that means direct exposure of the business data, transaction integrity, and the availability of critical business applications.&rdquo; The denial-of-service leg deserves separate emphasis because it is unconditional: the same bug can crash either component, and a crashed Web Dispatcher cuts off every SAP system behind it while it restarts.</p>
+  <p>The reach is not confined to one deployment shape. The affected surface runs across the ABAP kernel, the ICM, the standalone Web Dispatcher, the Web Dispatcher embedded in SAP HANA XS, the SAML 2.0 service provider in ABAP Platform, and the native SAP Gateway across ABAP, AS Java, dual-stack and standalone installations. Affected ICM and Web Dispatcher versions include KRNL64UC 7.53 and KERNEL 7.53, 7.54, 7.77, 7.93, 9.16, 9.18 and 9.20; affected Gateway versions run from KRNL64NUC 7.22 through KERNEL 9.21. Onapsis additionally lists older kernels &mdash; 7.40, 7.41, 7.42, 7.45, 7.49, 7.73, 7.81, 7.85 and 7.89 &mdash; that may never receive a fix at all.</p>
+  <p>The vendor&rsquo;s framing and the researchers&rsquo; framing agree on severity and diverge on timing. SAP&rsquo;s catalogue calls them priority fixes. The researchers call them working primitives whose disclosure window has just opened. Both are consistent with the same operational fact: the identifiers and the configuration gates are now public, which is the point at which opportunistic scanning usually begins, regardless of whether a public exploit exists.</p>
+  <p>The highest-value targets are internet-facing landscapes. A Web Dispatcher exposed to the internet, an ICM reachable through a published HTTP/HTTPS endpoint, and a Gateway reachable from an untrusted network all sit directly in the path of an unauthenticated adversary. The ICM path needs only network reachability to the HTTP/HTTPS port and a crafted sequence of WebSocket messages that drives an out-of-bounds write during fragment reassembly. No credential, no user interaction, and no misconfiguration are required; in some configurations the flaw is reachable before authentication, and SAP S/4HANA ships with ICF services that accept WebSocket connections without authentication.</p>
+  <p>But the researchers are careful about the distinction between exposed and exploited. Onapsis has not seen the bug in attacks. The Hacker News reports the same: &ldquo;The company&rsquo;s researchers have not seen the bug exploited in attacks.&rdquo; That absence changes the tempo of the response, not the severity of the bug. A CVSS 10.0 that runs commands as the instance owner is a full-compromise primitive on the day it is published, whether or not anyone has fired it yet.</p>
+  <h2>The Gateway&rsquo;s Blind Spot</h2>
+  <p>The gateway flaw is the more interesting of the two, because it is a policy failure wearing the costume of a memory bug. SAP Gateway is the component through which other systems make RFC calls, where external RFC servers register, and the mechanism that can start helper programs on the host. It runs by default on every SAP NetWeaver ABAP application server, and the same native gateway also runs in AS Java, dual-stack and standalone deployments.</p>
+  <p>Its access model rests on three lists: <code>secinfo</code>, which decides who may start which programs and where; <code>reginfo</code>, which decides which external programs may register; and <code>prxyinfo</code>, which decides which connections the gateway may relay or open on behalf of a client. Hardening guidance has concentrated on the first two, and the community&rsquo;s summary of them is uncompromising: &ldquo;trust the SAP system&rsquo;s own hosts and nothing else.&rdquo; The blind spot is the third list. &ldquo;PROXYGATE attacks that conclusion,&rdquo; Onapsis writes. Where the proxy policy allows it, a crafted series of requests makes the gateway believe an unauthenticated external request came from an internal application server. The access lists then behave exactly as configured, the &ldquo;allow internal&rdquo; rule is satisfied, and the gateway starts what the attacker asked for &mdash; in the most severe case, an arbitrary operating-system command as <code>&lt;sid&gt;adm</code>.</p>
+  <p>The gate is <code>prxyinfo</code>, or the profile parameter <code>gw/acl_mode_proxy</code> when the file is absent. A restrictive policy prevents the attack from starting; permissive configurations, including some defaults, leave the system exposed. Onapsis is explicit about the exposed population: &ldquo;Systems with a permissive prxyinfo, or with no prxyinfo and the parameter not set to 1, are your exposed population.&rdquo; And its first instruction is equally direct: &ldquo;Restricting it should be your first action.&rdquo;</p>
+  <p>On most kernel releases, SAP&rsquo;s fix combines a kernel patch with setting <code>gw/acl_mode_proxy = 1</code>; RedRays notes that the kernel fix adds the parameter for kernels up to 7.77 and advises ensuring <code>secinfo</code> and <code>reginfo</code> hold explicit rules rather than relying on implicit defaults. That is the uncomfortable part of the month: for the gateway, patching alone can leave the condition in place. The configuration is not a compensating control. It is half the fix.</p>
+  <p>The same logic explains why the gateway is a soft spot out of proportion to its CVE count. It is a trust point by design: it exists to let systems talk to systems, and its lists encode who is allowed to do what. Any flaw that lets an outsider be mistaken for an insider borrows the entire trust model rather than breaking it, which is why a permissive <code>prxyinfo</code> is worse than a missing patch. The gateway does not need to be compromised to be dangerous. It needs to be believed.</p>
+  <p>The ICM path is the more mechanical of the two. A WebSocket connection begins as an ordinary HTTP upgrade request; large messages may be split into fragments the receiver must recombine before handing them to the application. A crafted sequence writes attacker-controlled data past the end of the memory reserved for the connection, producing either an immediate crash or controlled corruption that the attacker converts into commands as <code>&lt;sid&gt;adm</code>. RedRays describes the same defect as malformed WebSocket control frames causing a heap out-of-bounds write before authentication. Onapsis reproduced the crash on every kernel release it tested.</p>
+  <p>The SAML fix is the quiet one. Under certain configurations, the SAML 2.0 service provider in AS ABAP and ABAP Platform did not verify signatures on incoming assertions, allowing an attacker to forge a response and log on as any user, administrators included. It requires no exploit primitive at all &mdash; only a forged assertion &mdash; and RedRays states there is no workaround. It is also the flaw most likely to be skipped during a kernel-focused rollout, because it lives in the service provider rather than the kernel or dispatcher. Enumerate every Fiori and Web GUI system using SAML SSO; configuration review alone does not close it.</p>
+  <p>The instinct to read a 10.0 as a vendor-communication artefact &mdash; a number chosen to move a customer &mdash; is understandable and, this month, wrong. The value of the score is not the score. It is the configuration the score sits on: a default-enabled WebSocket stack, a dispatcher that is the first process to parse hostile input, a gateway that runs on every application server, and a proxy list that most hardening guides never mention. The kernel was supposed to be the boring part.</p>
+  <p>The re-entry risk is not a second exploit; it is the scan. The CVE identifiers, affected components and configuration gates are now public, and the affected-version lists are long. The out-of-maintenance kernels &mdash; 7.40, 7.41, 7.42, 7.45, 7.49, 7.73, 7.81, 7.85 and 7.89 for ICM2SHELL, plus 7.20 and 7.21 for PROXYGATE &mdash; are the population that will not be fixed by a note. Those systems need an upgrade to a maintained release, and until then the only honest control is network reachability.</p>
+  <p>Taken together, the four fixes describe a single thesis. The dangerous part of an SAP landscape is not the business logic an attacker can reach; it is the infrastructure that decides whether the attacker is allowed to reach it. The ICM decides whether a WebSocket frame is parsed as a message or as a memory write. The gateway decides whether an external caller is an external caller or an application server. SAML decides whether an assertion is a signature or a suggestion. The trust decision is the vulnerability.</p>
+
+  <p class="footnote">The most useful sentence of the month may be the least dramatic one. &ldquo;For the SAP Security Patch Day November 2026, most of the critical fixes are in the kernel, so the practical answer for many landscapes is one well-planned kernel and Web Dispatcher rollout,&rdquo; RedRays writes. The SAML bypass, CVE-2026-120017 in SAP_BASIS releases 702 through 922, is the exception that a kernel-only rollout will miss: there is no workaround, so systems using SAML single sign-on need the service-provider fix regardless of what the dispatcher team does. The advisories are at <a href="https://onapsis.com/blog/icm2shell-cve-2026-76964-cve-2026-89126-sap-netweaver-web-dispatcher-threat-advisory">Onapsis ICM2SHELL</a> and <a href="https://onapsis.com/blog/proxygate-cve-2026-89103-sap-netweaver-gateway-threat-advisory">PROXYGATE</a>, <a href="https://redrays.io/blog/sap-security-patch-day-november-2026">RedRays</a> and <a href="https://thehackernews.com/2026/11/sap-patches-four-cvss-100-flaws.html">The Hacker News</a>.</p>
+
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">&copy; 2026 Stancy Ngereso &middot; Riftweld research briefing &middot; Published November 10, 2026</div>
+</footer>
+</body>
+</html>
