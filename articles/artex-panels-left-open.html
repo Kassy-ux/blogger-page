@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+<title>The Attackers Left Their Own Panel Open &mdash; Stancy Ngereso</title>
+<meta name="description" content="More than 1,600 ARTEX consoles are reachable from the public internet. Ten of them expose the operators&rsquo; own databases." />
+<style>
+  :root{
+    --red-500:hsl(356,100%,66%); --red-550:hsl(353,100%,62%);
+    --blue-900:hsl(208,49%,24%); --purple-950:hsl(237,17%,21%);
+    --purple-900:hsl(237,23%,31%); --gray-600:hsl(207,13%,34%);
+    --gray-900:hsl(240,10%,16%); --paper:#ffffff; --ink:#1b1e2b;
+    --soft:#f4f5f9; --line:#e3e6ef; --amber:#fff4d6; --amber-line:#e9c46a;
+    --gold:#e7b24b; --navy:#101a33; --navy-2:#1b2a4a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Ubuntu,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--paper);line-height:1.7}
+  a{color:var(--red-550);text-underline-offset:3px}
+  .site-header{background:linear-gradient(135deg,var(--purple-950),var(--purple-900));color:#fff;padding:18px 0}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  .nav{display:flex;align-items:center;justify-content:space-between;font-family:Overpass,sans-serif}
+  .brand{font-weight:700;letter-spacing:.3px;color:#fff;text-decoration:none}
+  .nav a.navlink{color:#e8e9f3;text-decoration:none;font-size:.92rem;margin-left:18px;opacity:.9}
+  .nav a.navlink:hover{opacity:1;text-decoration:underline}
+  .hero{background:
+      radial-gradient(900px 360px at 88% -20%, rgba(231,178,75,.30), transparent 60%),
+      linear-gradient(135deg,var(--navy),var(--navy-2) 70%,#2a1a2e);
+    color:#fff;padding:64px 0 52px}
+  .kicker{font-family:Overpass,sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:600;color:var(--gold)}
+  h1{font-family:Overpass,sans-serif;font-weight:600;line-height:1.12;font-size:clamp(1.9rem,4.6vw,3.0rem);margin:.35em 0 .3em}
+  .dek{font-size:1.12rem;max-width:650px;opacity:.96;margin:0 0 1.1em}
+  .byline{font-size:.9rem;opacity:.9}
+  .tags{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
+  .tag{font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;border:1px solid rgba(231,178,75,.55);color:#f2e6c8;border-radius:999px;padding:4px 10px}
+  article{padding:46px 0 20px}
+  article p{margin:0 0 1.15em;font-size:1.06rem}
+  article h2{font-family:Overpass,sans-serif;font-size:1.55rem;line-height:1.2;margin:2.1em 0 .55em;color:var(--blue-900)}
+  article h3{font-family:Overpass,sans-serif;font-size:1.18rem;margin:1.6em 0 .4em;color:var(--gray-900)}
+  .lede{font-size:1.16rem}
+  .dropcap::first-letter{float:left;font-family:Overpass,sans-serif;font-size:3.2rem;line-height:.82;padding:6px 10px 0 0;font-weight:700;color:var(--gold)}
+  .thesis{background:linear-gradient(135deg,#101a33,#1b2a4a);color:#f3f5fb;border-radius:12px;padding:22px 24px;margin:1.7em 0}
+  .thesis h3{margin:0 0 8px;color:var(--gold);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+  .thesis p{margin:0;font-size:1.12rem;line-height:1.6}
+  .callout{background:var(--soft);border-left:4px solid var(--gold);border-radius:8px;padding:18px 20px;margin:1.6em 0}
+  .callout h3{margin-top:0}
+  .callout ul{margin:.3em 0 0;padding-left:1.1em}
+  .callout li{margin:.45em 0}
+  .conf{font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:5px;padding:2px 7px;margin-right:6px;vertical-align:1px}
+  .conf.high{background:#e3f6e8;color:#1f7a3f}
+  .conf.mod{background:var(--amber);color:#7a5a00}
+  .conf.rep{background:#fde8e8;color:#a12626}
+  figure{margin:1.9em 0;padding:0}
+  figure svg{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:#fff}
+  figcaption{font-size:.86rem;color:var(--gray-600);margin-top:9px;line-height:1.5}
+  figcaption b{color:var(--ink)}
+  blockquote{margin:1.6em 0;padding:2px 0 2px 18px;border-left:3px solid var(--gold);color:var(--gray-600);font-style:italic}
+  table{width:100%;border-collapse:collapse;margin:1.4em 0;font-size:.92rem}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:Overpass,sans-serif;color:var(--blue-900);background:var(--soft)}
+  .pill{font-size:.7rem;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:999px;white-space:nowrap}
+  .pill.c{background:#e3f6e8;color:#1f7a3f}.pill.r{background:var(--amber);color:#7a5a00}
+  .stat{display:flex;gap:14px;flex-wrap:wrap;margin:1.4em 0}
+  .stat div{flex:1 1 150px;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--soft)}
+  .stat b{display:block;font-family:Overpass,sans-serif;font-size:1.7rem;color:var(--blue-900);line-height:1.05}
+  .stat span{font-size:.82rem;color:var(--gray-600)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.4em 0}
+  .card{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:#fff}
+  .card h4{font-family:Overpass,sans-serif;margin:0 0 .3em;font-size:1rem;color:var(--blue-900)}
+  .card p{font-size:.95rem;margin:0}
+  .sources{font-size:.9rem;color:var(--gray-600)}
+  .sources li{margin:.4em 0;word-break:break-word}
+  .footnote{font-size:.85rem;color:var(--gray-600);border-top:1px solid var(--line);margin-top:2em;padding-top:14px}
+  footer.site-footer{background:var(--purple-950);color:#d6d8e6;padding:26px 0;margin-top:40px;font-size:.86rem}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr} .hero{padding:46px 0 38px}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">Blogger</a>
+    <nav>
+      <a class="navlink" href="../index.html">Home</a>
+      <a class="navlink" href="./chrome-157-isnt-the-patch.html">Previous</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Research &middot; Adversary Infrastructure</div>
+    <h1>The Attackers Left Their Own Panel Open</h1>
+    <p class="dek">More than 1,600 ARTEX consoles are reachable from the public internet. Ten of them expose the operators&rsquo; own databases.</p>
+    <p class="byline">By Stancy Ngereso &middot; November 10, 2026 &middot; Template 01 &middot; Riftweld research briefing</p>
+    <div class="tags"><span class="tag">ARTEX</span><span class="tag">Adversary infrastructure</span><span class="tag">Exposure</span></div>
+  </div>
+</section>
+
+<main class="wrap">
+<article>
+  <p class="lede dropcap">More than 1,600 systems running ARTEX, the autonomous AI attack framework, are reachable from the public internet, researchers said this week. Ten of those consoles are misconfigured so badly that they expose the operators&rsquo; own databases to anyone who asks.</p>
+  <p>Check Point Research counted 2,557 systems that host, or have hosted, an ARTEX panel. Of those, 1,608 were live and publicly reachable at the time of the research. Ten instances were misconfigured to expose their full databases, which is how the researchers could read operator goals, model configurations and agent message logs directly rather than infer them from traffic.</p>
+  <p>ARTEX is an open-source, LLM-driven penetration-testing framework published on GitHub on 26 July 2026 by a developer using the handle &ldquo;Autumn-27.&rdquo; It is written in Go with an embedded Next.js console. An operator gives it a target and an objective in natural language; a planner agent chooses the next step, worker agents run tools such as nmap, curl, Impacket, sqlmap, nuclei, httpx, jadx, apktool and frida-tools, and every result feeds a shared graph of assets and findings. ARTEX does not ship a model. It calls external providers, and the operator picks which one.</p>
+  <div class="stat"><div><b>2,557</b><span>panel systems observed</span></div><div><b>1,608</b><span>live and public</span></div><div><b>10</b><span>exposed operator databases</span></div></div>
+  <p>A panel is an ordinary admin console, which is the point. It offers task orchestration, traffic recording, findings, coverage and an approval queue. It also shows the model the operator selected, the prompts the agents are running, and the results coming back. When the database behind that console is reachable, the console becomes a window into a working intrusion.</p>
+  <p>A second measurement puts the population lower. GitGuardian, citing Censys, reported roughly 1,400 publicly exposed ARTEX instances across about 800 deployments as of 4 November. Check Point&rsquo;s figure is higher and counts systems rather than deployments. The two methods differ, and the true number is not knowable from outside: many panels sit behind firewalls or on local networks where no scan will find them.</p>
+  <p>Incredibly, the exposure is not concentrated in one jurisdiction. Of the live ARTEX command-and-control servers, 882, or 54%, were in the United States; 295, or 18%, in Hong Kong; and 103, or 6%, in China. The framework is open source and the operators are everywhere the internet is.</p>
+  <p>&ldquo;Check Point Research observed 2,557 systems hosting or having hosted ARTEX panels, of which 1,608 were live and publicly reachable at the time of research, and 10 instances misconfigured to expose their full databases,&rdquo; the firm wrote. That is not a description of a stealth tool. It is a description of a popular tool whose users are no more careful with their own infrastructure than their victims were with theirs.</p>
+  <p>The original ARTEX repository was taken down and made closed source on 8 October 2026, after abuse reports. By then it had more than 12,000 forks, and maintained forks such as ScopeWeaver and &ldquo;ARTEX PRO&rdquo; remain in circulation. Deleting the upstream project removed the documentation. It did not remove the install base.</p>
+  <p>As detailed in earlier Riftweld briefings, agentic offensive frameworks have moved from proof of concept to shared infrastructure in under a year. The operators treat them the way earlier generations treated Cobalt Strike: a licensed or forked tool, a licence server, and a console that someone has to keep patched.</p>
+  <p>The exposed databases matter because they invert the usual visibility problem. Defenders normally learn about an intrusion from traffic, which is indirect and slow. Reading an operator&rsquo;s console gives the researchers the attacker&rsquo;s goals, their model choice, their prompt structure and their agent logs. That is why the 10 misconfigured instances produced more intelligence than the 1,598 correctly configured ones combined.</p>
+  <p>The economics are also visible in the panels. In one Check Point-observed cybercrime campaign, an operator ran an Apple iOS code-signing certificate heist from 14 to 29 October, consumed roughly 36 billion tokens, spent an estimated $700 to $1,500 on inference, and obtained more than 300 certificates, of which three were validated. A second campaign burned about 167.5 million tokens against 292 domains and stole nothing; many of its recorded &ldquo;successes&rdquo; were model hallucinations.</p>
+  <p>None of this requires the operator to compromise the panel. The panel is the operator&rsquo;s own machine. It is installed the way any web application is installed: pulled from a repository, configured with an API key, and exposed on a port. The ten open databases were not breached by an attacker. They were published by their owners.</p>
+  <p>That is the uncomfortable symmetry of the ARTEX economy. The same framework that gives a criminal machine-speed reconnaissance also gives researchers a map of the criminal&rsquo;s own estate, and the map is only available because the estate was built with the same missing controls the framework exploits in everyone else. The victim count is 1,608 live panels, about 1,400 exposed instances by the narrower count, and more than 12,000 forks that nobody can see.</p>
+
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">&copy; 2026 Stancy Ngereso &middot; Riftweld research briefing &middot; Published November 10, 2026</div>
+</footer>
+</body>
+</html>
